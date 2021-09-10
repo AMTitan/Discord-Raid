@@ -29,6 +29,7 @@ fn main() {
     let channel_id:String = read!();
     for token in tokens {
         join(invite.to_string(), token.clone());
+        thread::sleep(time::Duration::from_millis(timeout.to_string().parse::<u64>().unwrap()));
         message_send(channel_id.to_string(), token.to_string(), message.to_string());
         thread::sleep(time::Duration::from_millis(timeout.to_string().parse::<u64>().unwrap()));
     }
